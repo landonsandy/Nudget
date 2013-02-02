@@ -130,9 +130,9 @@ if(!goals)
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+NSString *lessOrMore=@"at least";
     Goal *goalForIP = goals[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %d %@", goalForIP.verb , goalForIP.goal, goalForIP.object];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ %d %@", goalForIP.verb , lessOrMore, goalForIP.goal, goalForIP.object];
     return cell;
 }
 

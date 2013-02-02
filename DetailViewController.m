@@ -20,8 +20,9 @@
 #pragma mark - Managing the detail item
 
 -(void)setRow:(int)thisrow{
-        [self configureView];
+    
     row=thisrow;
+        [self configureView];
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
     }        
@@ -41,8 +42,9 @@
     mvc = [mainnav.viewControllers objectAtIndex:0];
     if (mvc._goals.count>0) {
         Goal *g=mvc._goals[row];
+        NSString *lessOrMore=@"at least";
 
-        self.detailDescriptionLabel.text =[NSString stringWithFormat:@"%@ %d %@", g.verb , g.goal, g.object];
+        self.detailDescriptionLabel.text = [NSString stringWithFormat:@"%@ %@ %d %@", g.verb , lessOrMore, g.goal, g.object];
        
     }
 }
